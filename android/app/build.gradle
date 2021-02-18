@@ -187,6 +187,12 @@ dependencies {
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
+    implementation project(path: ':touchpointkit-debug')
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation "androidx.startup:startup-runtime:1.0.0"
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.10'
+
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'
     }

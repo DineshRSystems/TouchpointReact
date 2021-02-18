@@ -8,7 +8,11 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.visioncritical.touchpointkit.utils.TouchPointActivity;
+
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication {
@@ -26,6 +30,7 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
+            packages.add(new TouchPointKitPackage());
           return packages;
         }
 
@@ -45,6 +50,16 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+
+      List<String> screenNames =new ArrayList<String>();
+      screenNames.add("Demo 1");
+      screenNames.add("Demo 2");
+
+      HashMap<String, String> visitor = new HashMap<>();
+      visitor.put("id", "200");
+      visitor.put("email", "java@test.com");
+
+      TouchPointActivity.Companion.getShared().configure(screenNames, visitor);
   }
 
   /**
