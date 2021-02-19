@@ -7,10 +7,12 @@
 
 #import <Foundation/Foundation.h>
 #import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
+@import TouchPointKit;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TouchPointKitBridge : NSObject <RCTBridgeModule>
+@interface TouchPointKitBridge : RCTEventEmitter <RCTBridgeModule, TouchPointActivityCompletionDelegate>
 
 @end
 
