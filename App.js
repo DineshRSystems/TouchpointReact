@@ -16,7 +16,8 @@ import {
   StatusBar,
   NativeModules,
   Button,
-    NativeEventEmitter,
+  NativeEventEmitter,
+  DeviceEventEmitter,
 } from 'react-native';
 
 import {
@@ -27,17 +28,24 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const { TouchPointKitBridge } = NativeModules;
-const eventEmitter = new NativeEventEmitter(TouchPointKitBridge);
-
 const didActivityCompletedEvent = (event) => {
    console.log(event);
 }
 
-const subscription = eventEmitter.addListener('didActivityCompletedEvent', didActivityCompletedEvent);
+NativeModules.TouchPointKitBridge.clearCache();
 
- NativeModules.TouchPointKitBridge.clearCache();
- NativeModules.TouchPointKitBridge.configure('eliR4075f90VPme4CFAofMTdT3lHiVpObP12IUdp9Vw=', 'y7cRIU1gSAGRB3V9m-_rokGi4pDcnb64yho84mq2U-4=', 0, ['Demo 1', 'Demo 2'], { artist: 'Bruce Springsteen', title: 'Born in the USA' });
+// iOS
+//const { TouchPointKitBridge } = NativeModules;
+//const eventEmitter = new NativeEventEmitter(TouchPointKitBridge);
+//const subscription = eventEmitter.addListener('didActivityCompletedEvent', didActivityCompletedEvent);
+//NativeModules.TouchPointKitBridge.configure('eliR4075f90VPme4CFAofMTdT3lHiVpObP12IUdp9Vw=', 'y7cRIU1gSAGRB3V9m-_rokGi4pDcnb64yho84mq2U-4=', 0, ['Demo 1', 'Demo 2'], { artist: 'Bruce Springsteen', title: 'Born in the USA' });
+
+// Android
+const subscription = DeviceEventEmitter.addListener('didActivityCompletedEvent', didActivityCompletedEvent);
+ NativeModules.TouchPointKitBridge.configure(['Demo 1', 'Demo 2'], { id: '114', email: 'js@gmail.com' });
+ //NativeModules.TouchPointKitBridge.setVisitor({ id: '112', email: 'js@gmail.com' });
+
+// Common
  NativeModules.TouchPointKitBridge.enableDebugLogs(true);
  NativeModules.TouchPointKitBridge.shouldApplyAPIFilter(false);
 NativeModules.TouchPointKitBridge.setScreen('Demo 2', true);

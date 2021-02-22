@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="api_key">eliR4075f90VPme4CFAofMTdT3lHiVpObP12IUdp9Vw=</string>
-    <string name="api_secret">y7cRIU1gSAGRB3V9m-_rokGi4pDcnb64yho84mq2U-4=</string>
+    <string name="api_key">T-L6_53mOZV8Yn-dg1qMmYmPodWHT9zdB-59P_7Otcg=</string>
+    <string name="api_secret">XWNZSUtfnWKVdALc_l_ew-fODlr2MHoyLGSyRjeNBII=</string>
     <string name="pod_name">NA1</string>
     <bool name="disable_api_filter">true</bool>
     <bool name="enable_debug_logs">true</bool>

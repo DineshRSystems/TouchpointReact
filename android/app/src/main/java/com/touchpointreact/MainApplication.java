@@ -51,15 +51,15 @@ public class MainApplication extends Application implements ReactApplication {
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
 
-      List<String> screenNames =new ArrayList<String>();
-      screenNames.add("Demo 1");
-      screenNames.add("Demo 2");
-
-      HashMap<String, String> visitor = new HashMap<>();
-      visitor.put("id", "200");
-      visitor.put("email", "java@test.com");
-
-      TouchPointActivity.Companion.getShared().configure(screenNames, visitor);
+//      List<String> screenNames =new ArrayList<String>();
+//      screenNames.add("Demo 1");
+//      screenNames.add("Demo 2");
+//
+//      HashMap<String, String> visitor = new HashMap<>();
+//      visitor.put("id", "111");
+//      visitor.put("email", "android@test.com");
+//
+//      TouchPointActivity.Companion.getShared().configure(screenNames, visitor);
   }
 
   /**
